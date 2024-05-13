@@ -1,0 +1,72 @@
+#header1, #header2 {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #333;
+}
+
+#header1 {
+    background-color: #c8c8c8;
+}
+
+.box1, .box2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.box1 {
+    width: 600px;
+    height: 30px;
+}
+
+.ulBox1 li a {
+    color: #333; /* 수정: 링크 색상을 조절합니다. */
+    padding-right: 10px;
+}
+
+.ulBox1 li {
+    border-right: 1px solid #333;
+}
+
+.box2 {
+    width: 500px;
+}
+
+.ulBox2 li {
+    margin-left: 35px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.navbar__toggleBtn {
+    opacity: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+@media screen and (max-width: 600px) {
+    .box1, .box2 {
+        flex-direction: column;
+    }
+    ul {
+        display: none;
+    }
+    ul.active {
+        display: block;
+    }
+    .navbar__toggleBtn {
+        opacity: 1;
+    }
+}
