@@ -1,5 +1,5 @@
 import { handleActions } from "redux-actions"
-import {start_loading,finish_loading} from './loding'
+// import {start_loading,finish_loading} from './loding'
 import * as api from './api/auth'
 
 //액션타입
@@ -14,14 +14,14 @@ export const change_mode = (form, key, value) =>({type:CHANGE_MODE,form,key,valu
 export const reset_form = (form) =>({type:RESET_FORM,form})
 
 
-const REGISTER_LOADING ="registerLoading" //loding리덕스에서 보내줄 값
+//const REGISTER_LOADING ="registerLoading" //loding리덕스에서 보내줄 값
 const REGISTER_SUCCSESS ="auth/REGISTER_SUCCSESS"
 const REGISTER_FALURE ="auth/REGISTER_FALURE"
 
-export const regiser =(username,password) => async dispath =>{
-    start_loading(REGISTER_LOADING) //loding true로 
+export const Register =(username,password,email) => async dispath =>{
+    // start_loading(REGISTER_LOADING) //loding true로 
     try{
-        const response = await api.register(username,password) //api auth에있는거 참고
+        const response = await api.register(username,password,email) //api auth에있는거 참고
         
         dispath({type:REGISTER_SUCCSESS,payload:response.data}) //data 보내주고 에러는 null
         console.log(response.data)
@@ -29,17 +29,17 @@ export const regiser =(username,password) => async dispath =>{
         dispath({type:REGISTER_FALURE,payload:error}) //error는 의미를 잘모르겠고 하라는대로 하는거 쓰임없음
 
     }finally{
-        finish_loading(REGISTER_LOADING)
+        // finish_loading(REGISTER_LOADING)
         return;
     }
 }
 
-const LOGIN = 'loginLoading'
+// const LOGIN = 'loginLoading'
 const LOGIN_SUCCESS = 'auth/LOGIN_SUCCESS'
 const LOGIN_FAILURE = 'auth/LOGIN_FAILURE'
 
-export const login = (username,password) => async dispatch =>{
-    start_loading(LOGIN)  //바꿔야함
+export const Login = (username,password) => async dispatch =>{
+    // start_loading(LOGIN)  //바꿔야함
     
     try{
         const response = await api.login(username,password)
@@ -47,7 +47,7 @@ export const login = (username,password) => async dispatch =>{
     }catch(error){
         dispatch({type:LOGIN_FAILURE, payload: error})
     }finally{
-        finish_loading(LOGIN)
+        // finish_loading(LOGIN)
         return;
     }
 }
@@ -87,5 +87,15 @@ export const authRedux = handleActions({
     [REGISTER_SUCCSESS]:(state,{payload:auth}) => ({
         ...state,auth,
         authError:null
+    }),
+    [LOGIN_SUCCESS]: (state, {payload: auth})=>({
+        ...state,
+        auth,
+        authError:null
+    }),
+    [LOGIN_FAILURE]: (state, {payload: authError}) =>({
+       ...state,
+       auth:null,
+       authError
     })
 },initialState)

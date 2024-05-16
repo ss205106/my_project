@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import palette from '../../common/Pallete';
 import styled from 'styled-components';
 import Button from '../../common/Button';
+import { useDispatch } from 'react-redux';
+import { reset_form } from '../../modules/authRedux';
 const FormDiv = styled.div`
     h3{
         margin: 0;
@@ -56,17 +58,25 @@ const ErrorMessage = styled.div`
 
 const Form = (props) => {
     const {mode,text,form,error} = props
+    const {onchange,onclick}=props
+
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(reset_form(mode))
+        console.log(mode)
+    },[dispatch,mode])
 
     return (
         <FormDiv>
             <h3>{text}</h3>
-            <form >
-                <InputStyle type='text'   name="username" placeholder='아이디'/>
-                <InputStyle type='password'   name="password" placeholder='비밀번호'/>
+            <form onSubmit={(e)=>onclick(e)}>
+                <InputStyle type='text'   name="username" placeholder='아이디' onChange={(e)=>onchange(e)}/>
+                <InputStyle type='password'   name="password" placeholder='비밀번호' onChange={(e)=>onchange(e)}/>
                 {mode === "register" &&  
                <>
-               <InputStyle  type='password'  name="passwordConfirm" placeholder="비밀번호 확인" />
-               <InputStyle type='text'  name="email" placeholder="email"/>
+               <InputStyle  type='password'  name="passwordConfirm" placeholder="비밀번호 확인" onChange={(e)=>onchange(e)} />
+               <InputStyle type='text'  name="email" placeholder="email" onChange={(e)=>onchange(e)}/>
                 </>
                 }
                 {error && <ErrorMessage>{error}</ErrorMessage>}

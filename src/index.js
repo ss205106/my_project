@@ -5,10 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { thunk } from 'redux-thunk';
 import { legacy_createStore,applyMiddleware } from 'redux';
 import { rootReducer } from './modules';
 import logger from 'redux-logger';
-const store = legacy_createStore(rootReducer,applyMiddleware(logger))
+const store = legacy_createStore(rootReducer,applyMiddleware(thunk,logger))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

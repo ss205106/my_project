@@ -6,10 +6,10 @@ export const login = (username,password) => {
     const response = request.post('/api/auth/login',{username,password})   //백앤드쪽으로간다
     return response
 }
-export const register = (username,password) => {
-    console.log(username,password)
-    const response = request.post("/api/auth/register",{username,password})
-    console.log(response)
+export const register = (username,password,email) => {
+    console.log(username,password,email)
+    const response = request.post("/api/auth/register",{username,password,email})
+    // console.log(response)
     return response
 }
 export const check = () => {
