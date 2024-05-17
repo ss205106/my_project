@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const SButton = css`
   border: none;
-  border-radius: 4px;
+  // border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
   padding: 0.25rem 1rem;

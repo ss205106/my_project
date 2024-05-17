@@ -36,7 +36,7 @@ const Template = ( {children} ) => {
         <TemplateDiv>
             <FromBoxDiv>
                 <div className='logo'>
-                    <Button to="/" >Logo</Button>
+                    <Button to="/store" >Logo</Button>
                 </div>
                 {children}
             </FromBoxDiv>

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import "../css/Header.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import "../css/Header.css";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -8,33 +10,49 @@ const Header = () => {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
+    useEffect(() => {
+        const handleResize = () => {
+            if (menuOpen && window.innerWidth > 625) {
+                setMenuOpen(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [menuOpen]);
+
 
     return (
-        <>
-            <div id="header1">
-                <div className='box1'>
-                    <input type='text' name='search' placeholder='검색'/>
-                    <ul className={menuOpen ? 'ulBox1 active' : 'ulBox1'}>
-                        <li><Link to="/">로그인</Link></li>
-                        <li><Link to="/">회원가입</Link></li>
-                        <li><Link to="/">마이페이지</Link></li>
-                        <li><Link to="/">장바구니</Link></li>
+        <header>
+            <section className="hbody">
+                <article className="nav">
+                    <div className="title">
+                        <Link to="/"><h1>BRAND</h1></Link>
+                    </div>
+                    <ul id="menu1" className={menuOpen ? 'open' : ''}>
+                        <li><Link to="/store">stroe</Link></li>
+                        <li><Link to="/notice">커뮤니티</Link></li>
+                        <li><Link to="/contact">문의게시판</Link></li>
+                        <li><Link to="/contact">구매후기</Link></li>
                     </ul>
-                </div>
-            </div>
-            <div id="header2">
-                <div className='box2'>
-                <Link to="/">로고</Link>
-                    <ul className={menuOpen ? 'ulBox2 active' : 'ulBox2'}>
-                        <li><Link to="/">SHOP</Link></li>
+                    <ul id="menu2">
+                        <li><Link to="/store">stroe</Link></li>
                         <li><Link to="/">커뮤니티</Link></li>
-                        <li><Link to="/">문의게시판</Link></li>
-                        <li><Link to="/">구매후기</Link></li>
+                        <li><Link to="/notice">문의게시판</Link></li>
+                        <li><Link to="/contact">구매후기</Link></li>
                     </ul>
-                </div>
-            </div>
-            <button className="navbar__toggleBtn" onClick={toggleMenu}>Menu</button>
-        </>
+                    <div className="menu-toggle" onClick={toggleMenu}>
+                        <FontAwesomeIcon icon={faBars} className="fas" />
+                    </div>
+                    <ul id="menu3">
+                        <li><Link to="/login">로그인</Link></li>
+                        <li><Link to="/register">회원가입</Link></li>
+                        <li><Link to="/contact">마이페이지</Link></li>
+                    </ul>
+                </article>
+            </section>
+        </header>
     );
 };
 
