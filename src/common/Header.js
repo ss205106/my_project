@@ -30,15 +30,17 @@ const Header = () => {
             <h2>BRAND</h2>
         </div>
             <ul id='navbar_menu' className={menuOpen ? 'open' : ''}>
-                <li><Link to="store">store</Link></li>
+                <li><Link to="/store">store</Link></li>
                 <li><Link to="#">커뮤니티</Link></li>
                 <li><Link to="#">문의게시</Link></li>
                 <li><Link to="#">구매후기</Link></li>
             </ul>
 
             <ul id='navbar_menu2' className={menuOpen ? 'open' : ''}>
-                <li><Link to="#">로그인</Link></li>
-                <li><Link to="#">마이페이지</Link></li>
+                <li><Link to="/login">로그인</Link></li>
+                <li><Link to="/register">회원가입</Link></li>
+                <li><Link to="/#">마이페이지</Link></li>
+                <li><Link to="/">메인으로</Link></li>
             </ul>
             <GiHamburgerMenu className='icon_hamburger' onClick={toggleMenu}/>
     </nav>

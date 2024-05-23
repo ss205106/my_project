@@ -13,7 +13,7 @@ const FormDiv = styled.div`
     }
 `
 const InputStyle = styled.input`
-    font-size: 1rem;
+    font-size: 0.5rem;
     border: none;
     border-bottom: 1px solid ${ palette.Gray[5] };
     padding-bottom: 0.5rem;
@@ -32,13 +32,13 @@ const InputStyle = styled.input`
 
 const ButtonStyle= styled(Button)`
     margin-top: 1rem;
- 
+    font-size: 0.5rem;
 `
 
 const FooterDiv = styled.div`
     margin-top: 2rem;
     text-align: right;
-    
+    font-size: 0.5rem;
     a{
         color:${palette.Gray[6]};
         text-decoration: underline;
@@ -61,7 +61,7 @@ const Form = (props) => {
     const {onchange,onclick}=props
 
     const dispatch = useDispatch();
-
+    
     useEffect(()=>{
         dispatch(reset_form(mode))
         console.log(mode)
@@ -69,7 +69,7 @@ const Form = (props) => {
 
     return (
         <FormDiv>
-            <h3>{text}</h3>
+           <h4 style={{ textDecoration: "underline" }}>{text}</h4>
             <form onSubmit={(e)=>onclick(e)}>
                 <InputStyle type='text'   name="username" placeholder='아이디' onChange={(e)=>onchange(e)}/>
                 <InputStyle type='password'   name="password" placeholder='비밀번호' onChange={(e)=>onchange(e)}/>

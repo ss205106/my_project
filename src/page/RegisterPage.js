@@ -3,6 +3,8 @@ import Template from '../component/auth/Template';
 import From from '../component/auth/Form';
 import { useDispatch, useSelector } from 'react-redux';
 import {change_mode,Register } from '../modules/authRedux';
+import Header from '../common/Header';
+import Footer from '../common/Footer';
 const RegisterPage = () => {
 
     const dispatch = useDispatch()
@@ -20,9 +22,15 @@ const RegisterPage = () => {
         dispatch(Register(username,password,email))
     }
     return (
-        <Template>
-            <From  text="회원가입" mode="register" onchange={onchange} onclick={Register_click}/>
-        </Template>
+        <div>
+        <Header/>
+        <div style={{height:"100%"}}>
+            <Template>
+                <From  text="회원가입" mode="register" onchange={onchange} onclick={Register_click}/>
+            </Template>
+        </div>
+        <Footer/>
+        </div>
     );
 };
 
