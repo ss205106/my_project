@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import {change_mode,Register } from '../modules/authRedux';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
+import { useNavigate } from 'react-router-dom';
 const RegisterPage = () => {
-
-    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const {register} = useSelector(state=>({
         register:state.authRedux.register
     }))
@@ -20,6 +21,9 @@ const RegisterPage = () => {
         e.preventDefault()
         const {username,password,email}=register;
         dispatch(Register(username,password,email))
+    
+        navigate("/login")
+
     }
     return (
         <div>

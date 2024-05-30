@@ -7,6 +7,7 @@ import Header from '../common/Header';
 import { Login } from '../modules/authRedux';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const PageContainer = styled.div`
     width: 100%;
@@ -22,6 +23,8 @@ const LoginPage = () => {
         auth:state.authRedux.auth,
     }))
     const [error,setError] = useState(null)
+
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     
     const onchange=(e)=>{
@@ -33,6 +36,7 @@ const LoginPage = () => {
         e.preventDefault()
         const {username,password}=login;
         dispatch(Login(username,password))
+        navigate("/store")
     }
     
     return (

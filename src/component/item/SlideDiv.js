@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import productObj from "./product.json"
+// import productObj from "./product.json"
 import { Link } from "react-router-dom";
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
@@ -83,8 +83,8 @@ const RightButton=styled(SlArrowRight)`
 
 `
 export default function SlideDiv(props){
-    const {count,product,img,title} = props
-    console.log(product)
+    const {count,product,img,title,itemClick} = props
+    // console.log(product)
     const [totalX,setTotalX]=useState(165*count)
     const [moveX,setMoveX]=useState(0)
     const [leftOpacity,setLeftOpacity]=useState(1)
@@ -162,7 +162,7 @@ export default function SlideDiv(props){
             <DivContent moveX={moveX}>
                 {
                     product.map(product=>(
-                        <ImgDiv>
+                        <ImgDiv onClick={()=>itemClick(product.id)}>
                             <Img src={product.imge}></Img>
                             <ContentDIv>
                                 <TypeDiv>{product.type}</TypeDiv>

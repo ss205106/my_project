@@ -6,6 +6,9 @@ import product from "../component/item/product.json"
 import palette from '../common/Pallete';
 import Carousel from '../common/Carousel';
 import Footer from '../common/Footer';
+import { Detail_item } from '../modules/sotreRedux';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 const Div=styled.div`
   width:810px;
   margin:0px auto;
@@ -16,6 +19,13 @@ const CarouselDiv = styled.div`
 margin-bottom:30px;
 `
 const StorePage = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const itemClick=(id)=>{
+        console.log(id)
+        dispatch(Detail_item(id,"item1"))
+        navigate("/ItemPage")
+    }
     return (
             <>
             <Header/>
@@ -25,10 +35,10 @@ const StorePage = () => {
                 </CarouselDiv>
                 <div id='itemContainer' style={{backgroundColor:`${palette.Gray[1]}`}}>
                     <Div>
-                        <SlideDiv title="벨트" count={6} product={product.itme1} img="img2"/>
+                        <SlideDiv title="벨트" count={6} product={product.itme1} img="img2" itemClick={itemClick}/>
                     </Div>
                     <Div>
-                        <SlideDiv title="스트랩" count={6} product={product.itme2} img="img1"/>
+                        <SlideDiv title="스트랩" count={6} product={product.itme2} img="img1" itemClick={itemClick}/>
                     </Div>
                 </div>
             </div>

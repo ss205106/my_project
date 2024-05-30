@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import "../css/Header.css";
 import { CiDumbbell } from "react-icons/ci";
+import { useSelector } from 'react-redux';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const {auth} = useSelector(state =>({
+        auth:state.authRedux.auth
+    }))
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
@@ -35,13 +38,20 @@ const Header = () => {
                 <li><Link to="#">문의게시</Link></li>
                 <li><Link to="#">구매후기</Link></li>
             </ul>
-
+            
+            {auth  ? (
             <ul id='navbar_menu2' className={menuOpen ? 'open' : ''}>
+                <li>  <Link to="#">{auth.username}  님</Link></li>
+                <li><Link to="#">로그아웃</Link></li>
+                <li><Link to="/#">마이페이지</Link></li>
+                <li><Link to="/">메인으로</Link></li>
+            </ul>):
+           (<ul id='navbar_menu2' className={menuOpen ? 'open' : ''}>
                 <li><Link to="/login">로그인</Link></li>
                 <li><Link to="/register">회원가입</Link></li>
                 <li><Link to="/#">마이페이지</Link></li>
                 <li><Link to="/">메인으로</Link></li>
-            </ul>
+            </ul>)}
             <GiHamburgerMenu className='icon_hamburger' onClick={toggleMenu}/>
     </nav>
     );
