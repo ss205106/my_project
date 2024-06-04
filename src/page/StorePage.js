@@ -21,9 +21,16 @@ margin-bottom:30px;
 const StorePage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const itemClick=(id)=>{
-        console.log(id)
-        dispatch(Detail_item(id,"item1"))
+    const itemClick=(id,img)=>{
+        // console.log(img)
+        if(img==="img1"){
+            dispatch(Detail_item(id,"item1"))
+        }else if(img === "img2"){
+            dispatch(Detail_item(id,"item2"))
+        }else if(img === "img3"){
+            dispatch(Detail_item(id,"item3"))
+        }
+        
         navigate("/ItemPage")
     }
     return (
@@ -35,10 +42,13 @@ const StorePage = () => {
                 </CarouselDiv>
                 <div id='itemContainer' style={{backgroundColor:`${palette.Gray[1]}`}}>
                     <Div>
-                        <SlideDiv title="벨트" count={6} product={product.itme1} img="img2" itemClick={itemClick}/>
+                        <SlideDiv title="벨트" count={6} product={product.itme2} img="img2" itemClick={itemClick}/>
                     </Div>
                     <Div>
-                        <SlideDiv title="스트랩" count={6} product={product.itme2} img="img1" itemClick={itemClick}/>
+                        <SlideDiv title="스트랩" count={6} product={product.itme1} img="img1" itemClick={itemClick}/>
+                    </Div>
+                    <Div>
+                        <SlideDiv title="스트랩" count={6} product={product.itme3} img="img3" itemClick={itemClick}/>
                     </Div>
                 </div>
             </div>

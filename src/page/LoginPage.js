@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Template from '../component/auth/Template';
 import Form from '../component/auth/Form';
 import { change_mode } from '../modules/authRedux';
@@ -8,7 +8,7 @@ import { Login } from '../modules/authRedux';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-
+import { check } from '../modules/user';
 const PageContainer = styled.div`
     width: 100%;
     height: 100vh;
@@ -17,10 +17,11 @@ const PageContainer = styled.div`
 `;
 const LoginPage = () => {
     
-    const {login,authError,auth} = useSelector(state => ({
+    const {login,authError,auth,user} = useSelector(state => ({
         login:state.authRedux.login,
         authError:state.authRedux.authError,
         auth:state.authRedux.auth,
+        user:state.user.user
     }))
     const [error,setError] = useState(null)
 
@@ -36,15 +37,40 @@ const LoginPage = () => {
         e.preventDefault()
         const {username,password}=login;
         dispatch(Login(username,password))
-        navigate("/store")
+        // navigate("/store")
     }
+
+    useEffect(() => {
+        setError("")
+        if (authError){
+            console.log(authError)
+            setError("로그인 실패")
+            return
+        }
+        if (auth) {
+            dispatch(check())  //user에 사용자 이름 등록
+        }
+    }, [authError,setError,dispatch,auth]);
+
+    useEffect(()=>{
+        if(user){
+           try{
+            localStorage.setItem('user',JSON.stringify(user))
+           }catch(e){
+            console.log('localStorage is not working')
+           }
+            navigate(`/store`)
+        }
+    },[user,navigate])
+         
+
     
     return (
         <PageContainer>
         <Header/>
         <div >
             <Template>
-                <Form text="로그인" mode="login" onchange={onchange} onclick={login_click}/>
+                <Form text="로그인" mode="login" onchange={onchange} onclick={login_click} error={error}/>
             </Template>
         </div>
         <Footer/>

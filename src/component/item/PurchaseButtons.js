@@ -11,15 +11,10 @@ const ButtonStyle=styled(Button)`
 margin-right:10px;
 `
 
-const PurchaseButtons = () => {
+const PurchaseButtons = (props) => {
+    const {handleAddToCart,handlePurchase} = props
 
-    const handlePurchase=()=>{
-        console.log("e")
-    }
-
-    const handleAddToCart=()=>{
-        console.log("e")
-    }
+ 
     return (
     <ButtonsDiv className="purchase-buttons">
         <div>

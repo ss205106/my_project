@@ -16,5 +16,14 @@
         {"id": 5, "imge": "", "type": "하빈져 패디드 레더 벨트 M 565g,Black", "price": "28660", "content": "파워리프팅", "discounted_price": "25794"},
         {"id": 6, "imge": "", "type": "SBD 13mm 레버 벨트", "price": "375000", "content": "파워리프팅", "discounted_price": "337500"},
         {"id": 7, "imge": "", "type": "에버라스트 역도 벨트, 1개", "price": "35900", "content": "파워리프팅", "discounted_price": "32310"}
+    ],
+    "itme3": [
+        {"id": 1, "imge": "", "type": "타이트엔드 PNS 쿠션 무릎보호대, 1세트", "price": "26900", "content": "파워리프팅", "discounted_price": "24210"},
+        {"id": 2, "imge": "", "type": "아디다스 에어로레디 무릎 보호대, 1개 ", "price": "14900", "content": "파워리프팅", "discounted_price": "13410"},
+        {"id": 3, "imge": "", "type": "포시즌 타이트 무릎 보호대 블랙 2p, 1세트", "price": "119681", "content": "파워리프팅", "discounted_price": "107713"},
+        {"id": 4, "imge": "", "type": "필캣 크로스 밴드 무릎 보호대 M, 1개", "price": "25110", "content": "파워리프팅", "discounted_price": "22599"},
+        {"id": 5, "imge": "", "type": "쎈버 3단 무릎보호대, 1개", "price": "28660", "content": "파워리프팅", "discounted_price": "25794"},
+        {"id": 6, "imge": "", "type": "BBRAND 테이핑 압박 무릎 보호대 A타입 블랙, 1개", "price": "375000", "content": "파워리프팅", "discounted_price": "337500"},
+        {"id": 7, "imge": "", "type": "웰럽 프리미엄 실리콘 브레이스 헬스 농구 등산용 무릎보호대 2p", "price": "35900", "content": "파워리프팅", "discounted_price": "32310"}
     ]
 }

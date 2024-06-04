@@ -12,7 +12,7 @@ const RegisterPage = () => {
     const {register} = useSelector(state=>({
         register:state.authRedux.register
     }))
-    console.log(register)
+    // console.log(register)
     const onchange=(e)=>{
         const { name, value } = e.target;
         dispatch(change_mode("register", name, value));

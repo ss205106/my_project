@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Header from '../common/Header';
 import '../css/ItemPage.css'; // 별도의 CSS 파일을 사용합니다
 import PurchaseButtons from '../component/item/PurchaseButtons';
+import { useNavigate } from 'react-router-dom';
 const ItemPage = () => {
     const { Detail } = useSelector(state => ({
         Detail: state.sotreRedux.Detail
     }));
 
+    const [quantity, setQuantity] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(Detail ? Detail[0].discounted_price : 0);
+
+    const navigate = useNavigate()
+
+    const handleQuantityChange=(e)=>{
+        const selectedQuantity = parseInt(e.target.value);
+        setQuantity(selectedQuantity);
+        setTotalPrice(selectedQuantity * Detail[0].discounted_price);
+    }
+
+    const handlePurchase=()=>{
+        navigate("/Payment")
+    }
+    
+    const handleAddToCart=()=>{
+        console.log("e")
+    }
     return (
         <>
             <Header />
@@ -50,18 +69,22 @@ const ItemPage = () => {
                                     <tr>
                                         <td className="label">수량</td>
                                         <td>
-                                            <select name="quantity" className="quantity-select">
+                                            <select name="quantity" className="quantity-select"  value={quantity} onChange={handleQuantityChange}>
                                                 {[...Array(10).keys()].map(num => (
                                                     <option key={num + 1} value={num + 1}>{num + 1}</option>
                                                 ))}
                                             </select>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td className="label">총 상품금액</td>
+                                        <td>{totalPrice}원</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <PurchaseButtons/>
+                    <PurchaseButtons Detail={Detail} handlePurchase={handlePurchase} handleAddToCart={handleAddToCart}/>
                 </div>
             ) : (
                 <div>상품 준비 중...</div>
