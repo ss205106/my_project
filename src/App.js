@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import './App.css';
 // import Header from './common/Header';
@@ -24,6 +25,29 @@ function App() {
           <Route path='/Payment' element={<PaymentPage/>}/>
         </Routes>
       </div>
+=======
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+>>>>>>> 314b713164e80cef4fd50e0f6c214a789b68897a
   );
 }
 
