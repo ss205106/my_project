@@ -1,0 +1,12 @@
+.CarouselDiv{
+     margin-bottom:30px;
+ background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  
+    .CarouselDiv {
+       display: none;
+    }
+   
+      }

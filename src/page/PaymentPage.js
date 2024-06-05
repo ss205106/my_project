@@ -159,10 +159,46 @@ const PaymentPage = () => {
                             </table>
                             <div id="t2">
                                 <p>결제수단</p>
+                                <div id="paymentContent">
+                                    <div class="payment-methods">
+                                        <div>
+                                            <input type="checkbox" id="credit-card" name="payment-method" value="credit-card"/>
+                                            <label for="credit-card">신용카드</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="debit-card" name="payment-method" value="debit-card"/>
+                                            <label for="debit-card">체크카드</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="kakaopay" name="payment-method" value="kakaopay"/>
+                                            <label for="kakaopay">카카오페이</label>
+                                        </div>
+                                    </div>
+                                    <div class="payment-methods">
+                                            <div>       
+                                                <input type="checkbox" id="naver-pay" name="payment-method" value="naver-pay"/>
+                                                <label for="naver-pay">네이버 페이</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="bank-transfer" name="payment-method" value="bank-transfer"/>
+                                                <label for="bank-transfer">실시간 계좌이체</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="mobile-payment" name="payment-method" value="mobile-payment"/>
+                                                <label for="mobile-payment">휴대폰 결제</label>
+                                            </div>
+                                    </div>
+                                </div>
                                 
                             </div>
                             <div id="t3">
-                            <button>결제하기</button>
+                            <div id="t3Content">
+                                    <div >
+                                        <input type="checkbox" id="mobile-payment" name="payment-method" value="mobile-payment"/>
+                                        <label for="mobile-payment">구매조건 확인 및 결제진행에 동의</label>
+                                    </div>
+                                </div>
+                                <button id='paymentBtn'>결제하기</button>
                             </div>
                     </div>
                 </div>

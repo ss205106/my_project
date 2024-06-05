@@ -21,7 +21,7 @@ const CommunityPage = () => {
     const currentItems = postData.post.slice(indexOfFirstItem, indexOfLastItem);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+    
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
