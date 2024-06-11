@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import postData from "../component/post/postData.json";
+// import postData from "../component/post/postData.json";
 import "../css/Community.css";
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import Carousel from '../common/Carousel';
-import { useDispatch } from 'react-redux';
-import { Detail_post } from '../modules/sotreRedux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Detail_post } from '../modules/post';
 
 const CommunityPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
     
+    const {user,postData} = useSelector(state => ({
+        user:state.user.user,
+        postData:state.PostRedux.postData
+    }))
     // 총 페이지 수 계산
-    const totalPages = Math.ceil(postData.post.length / itemsPerPage);
+    const totalPages = Math.ceil(postData.length / itemsPerPage);
     
     // 현재 페이지에 표시할 데이터 계산
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = postData.post.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = postData.slice(indexOfFirstItem, indexOfLastItem);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
     
@@ -29,6 +33,15 @@ const CommunityPage = () => {
         // console.log(id)
         dispatch(Detail_post(id))
         navigate("/post")
+    }
+    
+    const WriteClick = ()=>{
+        if(user){
+            navigate("/write")
+        }else{
+            alert("로그인후 사용해주세요")
+        }
+      
     }
     return (
         <div>
@@ -45,6 +58,9 @@ const CommunityPage = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className='WrteBtnDiv'>
+                    <button onClick={WriteClick}>글쓰기</button>
                 </div>
                 <div className="pagination">
                     {Array.from({ length: totalPages }, (_, index) => (

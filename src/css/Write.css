@@ -1,0 +1,17 @@
+.WrteDiv{
+    margin-left: 740px;
+    text-align: end;
+}
+.WrteDiv button{
+    padding: 5px 15px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: #000;
+    color: #f1f1f1;
+    transition: all 0.5s;
+}
+.WrteDiv button:hover{
+    background-color: #f1f1f1;
+    color: #000;
+    cursor: pointer;
+}

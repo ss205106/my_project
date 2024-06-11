@@ -32,6 +32,8 @@ const StorePage = () => {
             dispatch(Detail_item(id,"item2"))
         }else if(img === "img3"){
             dispatch(Detail_item(id,"item3"))
+        }else if(img === "img4"){
+            dispatch(Detail_item(id,"item4"))
         }
         
         navigate("/ItemPage")
@@ -55,8 +57,12 @@ const StorePage = () => {
                     <div className='CarouselDiv'>
                             <Carousel/>
                     </div>
+                    <h3 style={{paddingTop:"25px"}}>LINE-UP</h3>
                     <Div>
                         <SlideDiv title="무릎보호대" count={6} product={product.itme3} img="img3" itemClick={itemClick}/>
+                    </Div>
+                    <Div>
+                        <SlideDiv title="팔꿈치보호대" count={6} product={product.itme4} img="img4" itemClick={itemClick}/>
                     </Div>
                 </div>
                 

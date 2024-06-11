@@ -112,6 +112,7 @@ img{
 #paymentBtn:hover{
     color: #000;
     background-color: #fff;
+    cursor: pointer;
 }
 .meno{
     width: 100%;

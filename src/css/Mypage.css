@@ -1,0 +1,37 @@
+
+#mypageBody{
+    background-color:#e5e7eb ;
+}
+.myContent{ 
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 60px ;
+    /* background-color:red; */
+    display: flex;
+}
+.list{
+    font-size: 15px;
+}
+.userBody{
+  
+    width: 80%;
+    margin-left: 40px;
+}
+.userContent{
+    /* width: ; */
+    background-color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.userprofile {
+    display: flex;
+}
+#icon{
+    font-size: 50px;
+    margin-right: 10px;
+}
+.point{
+    border-left: 2px solid #ccc;
+    padding-left: 30px ;
+}

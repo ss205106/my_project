@@ -25,5 +25,14 @@
         {"id": 5, "imge": "", "type": "쎈버 3단 무릎보호대, 1개", "price": "28660", "content": "파워리프팅", "discounted_price": "25794"},
         {"id": 6, "imge": "", "type": "BBRAND 테이핑 압박 무릎 보호대 A타입 블랙, 1개", "price": "375000", "content": "파워리프팅", "discounted_price": "337500"},
         {"id": 7, "imge": "", "type": "웰럽 프리미엄 실리콘 브레이스 헬스 농구 등산용 무릎보호대 2p", "price": "35900", "content": "파워리프팅", "discounted_price": "32310"}
+    ],
+    "itme4": [
+        {"id": 1, "imge": "", "type": "제로투히어로 헬스 카모 팔꿈치 보호대 EXCLUSIVE BLACK CAMO, 1개 ", "price": "11900", "content": "파워리프팅", "discounted_price": "10710"},
+        {"id": 2, "imge": "", "type": "슈퍼비스트 팔꿈치보호대[파워] 양팔2개1세트 시즌온 헬스엘보아대 SUPERBEAST ELBOW ", "price": "11,900", "content": "파워리프팅", "discounted_price": "10710"},
+        {"id": 3, "imge": "", "type": "제로투히어로 헬스 팔꿈치보호대 Type2 Black 양쪽 세트, 1세트 ", "price": "10,500", "content": "파워리프팅", "discounted_price": "9450"},
+        {"id": 4, "imge": "", "type": "셀프케어 데이데이즈 2개 좌우세트 팔꿈치보호대 ", "price": "17,400", "content": "파워리프팅", "discounted_price": "15660"},
+        {"id": 5, "imge": "", "type": "제로투히어로 네오프렌 헬스 팔꿈치보호대 7mm Black + White 양쪽 세트, 1세트 ", "price": "28660", "content": "파워리프팅", "discounted_price": "25794"},
+        {"id": 6, "imge": "", "type": "셀프케어 데이데이즈 2개 좌우세트 팔꿈치보호대 ", "price": "10,500", "content": "파워리프팅", "discounted_price": "9450"},
+        {"id": 7, "imge": "", "type": "쉴드 엘보우 랩 보호대 모던블랙 2p, 1개 ", "price": "20,400", "content": "파워리프팅", "discounted_price": "18360"}
     ]
 }

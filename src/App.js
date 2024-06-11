@@ -3,13 +3,15 @@ import './App.css';
 // import Header from './common/Header';
 import LoginPage from './page/LoginPage';
 import RegisterPage from './page/RegisterPage';
-import { Route,Routes,Router } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 import MainPage from './page/MainPage';
 import StorePage from './page/StorePage';
 import ItemPage from './page/ItemPage';
 import CommunityPage from './page/CommunityPage';
 import PostPage from './page/PostPage';
 import PaymentPage from './page/PaymentPage';
+import WritePage from './page/WritePage';
+import MyPage from './page/MyPage';
 function App() {
   return (
     <div className="App">
@@ -22,6 +24,8 @@ function App() {
           <Route path='/Community' element={<CommunityPage/>}/>
           <Route path='/post' element={<PostPage/>}/>
           <Route path='/Payment' element={<PaymentPage/>}/>
+          <Route path='/write' element={<WritePage/>}/>
+          <Route path='/mypage' element={<MyPage/>}/>
         </Routes>
       </div>
   );
