@@ -146,11 +146,11 @@ const PaymentPage = () => {
                                 </tr>
                                 <tr>
                                     <td>상품가격</td>
-                                    <td>상품가격</td>
+                                    <td>{Detail[0].discounted_price}원</td>
                                 </tr>
                                 <tr >
                                     <td>배송비</td>
-                                    <td>배송비</td>
+                                    <td>3000원</td>
                                 </tr>
                                
                                 <tr>

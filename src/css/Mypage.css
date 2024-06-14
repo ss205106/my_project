@@ -1,6 +1,7 @@
 
 #mypageBody{
-    background-color:#e5e7eb ;
+    background-color:#f3f3f3 ;
+    height: 100vh;
 }
 .myContent{ 
     width: 60%;
@@ -10,10 +11,17 @@
     display: flex;
 }
 .list{
-    font-size: 15px;
+    font-size: 12px;
+}
+.list li{
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 15px;
+}
+.list li a:hover{
+   border-bottom: 2px solid #FFA811;;
 }
 .userBody{
-  
     width: 80%;
     margin-left: 40px;
 }
@@ -34,4 +42,39 @@
 .point{
     border-left: 2px solid #ccc;
     padding-left: 30px ;
+}
+.mypageBasket{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.mypageBasketContent{
+    display: flex;
+}
+.mypageBasketContent div{
+    margin-top: 30px;
+    margin-left: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: start;
+}
+.myPageBtn{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.myPageBtn button{
+    width: 100px;
+    padding: 5px 15px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: #000;
+    color: #f1f1f1;
+    transition: all 0.5s;
+}
+.myPageBtn button:hover{
+    background-color: #f1f1f1;
+    color: #000;
+    cursor: pointer;
 }
