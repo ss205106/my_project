@@ -1,24 +1,21 @@
 import { handleActions } from "redux-actions"
 import product from "../component/item/product.json"
-import postData from "../component/post/postData.json"
 
 const DETAIL_ITEM = "store/DETAIL_ITEM"
-const DETAIL_POST = "stroe/DETAIL_POST"
-
+const BASKET_ITEM = "store/BASKET_ITEM"
 export const Detail_item = (id,itemNum) =>({type:DETAIL_ITEM, payload: { id, itemNum }})
+export const Basket_item = () => ({type:BASKET_ITEM})
 
-export const Detail_post = (id) => ({type:DETAIL_POST, payload: { id}})
 
 const initialState = {
     items:{
         item1:product.itme1,
         item2:product.itme2,
-        item3:product.itme3
+        item3:product.itme3,
+        item4:product.itme4,
     },
-    DetailItem:null,
-    posts:postData.post,
-    DetailPost:null,
-
+    Detail:null,
+    ShoppingBasket:[]
 }
 export const sotreRedux = handleActions({
     [DETAIL_ITEM] : (state,{ payload: { id, itemNum } } ) => {  //체인지 함수 
@@ -31,16 +28,13 @@ export const sotreRedux = handleActions({
         ...state,Detail
     }
     },
-    [DETAIL_POST]:(state,{ payload:{ id } } ) => {
-        // console.log(id)
-        // console.log(state.posts)
-        const newPosts = [...state.posts]
-        // console.log(newPosts)
-        const detail_post = newPosts.find(item => item.id === id)
-        // console.log(detail_post)
+    [BASKET_ITEM] : (state ) => {  //체인지 함수 
+        const newBasket_item = state.Detail[0]
+        console.log(newBasket_item)
+        state.ShoppingBasket.push(state.Detail[0])
         return{
-            ...state,DetailPost:detail_post
-        }
-    }  
-   
+        ...state,
+    }
+    },
+
 },initialState)

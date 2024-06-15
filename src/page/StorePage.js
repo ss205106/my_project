@@ -9,15 +9,18 @@ import Footer from '../common/Footer';
 import { Detail_item } from '../modules/sotreRedux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import AnimationPage from '../animation/AnimationPage';
+import "../css/Strore.css"
 const Div=styled.div`
   width:810px;
   margin:0px auto;
   overflow: hidden;
   height: 250px;
 `
-const CarouselDiv = styled.div`
-margin-bottom:30px;
-`
+// const CarouselDiv = styled.div`
+// margin-bottom:30px;
+// background-color: white;
+// `
 const StorePage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -29,6 +32,8 @@ const StorePage = () => {
             dispatch(Detail_item(id,"item2"))
         }else if(img === "img3"){
             dispatch(Detail_item(id,"item3"))
+        }else if(img === "img4"){
+            dispatch(Detail_item(id,"item4"))
         }
         
         navigate("/ItemPage")
@@ -36,21 +41,31 @@ const StorePage = () => {
     return (
             <>
             <Header/>
+          
             <div id="body" >
-                <CarouselDiv>
-                    <Carousel/>
-                </CarouselDiv>
+            <AnimationPage/>
+              
                 <div id='itemContainer' style={{backgroundColor:`${palette.Gray[1]}`}}>
+                    <h3 style={{paddingTop:"25px"}}>LINE-UP</h3>
                     <Div>
                         <SlideDiv title="벨트" count={6} product={product.itme2} img="img2" itemClick={itemClick}/>
                     </Div>
+                
                     <Div>
                         <SlideDiv title="스트랩" count={6} product={product.itme1} img="img1" itemClick={itemClick}/>
                     </Div>
+                    <div className='CarouselDiv'>
+                            <Carousel/>
+                    </div>
+                    <h3 style={{paddingTop:"25px"}}>LINE-UP</h3>
                     <Div>
-                        <SlideDiv title="스트랩" count={6} product={product.itme3} img="img3" itemClick={itemClick}/>
+                        <SlideDiv title="무릎보호대" count={6} product={product.itme3} img="img3" itemClick={itemClick}/>
+                    </Div>
+                    <Div>
+                        <SlideDiv title="팔꿈치보호대" count={6} product={product.itme4} img="img4" itemClick={itemClick}/>
                     </Div>
                 </div>
+                
             </div>
             <Footer />
             </>

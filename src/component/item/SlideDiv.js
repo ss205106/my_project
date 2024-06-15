@@ -118,6 +118,12 @@ export default function SlideDiv(props){
         for(let i=0; i<product.length; i++){
           product[i].imge=imgObject[keys[i]]
         }
+    }else if(img ==="img4"){
+        const imgObject = importAll(require.context(`./img4`, false, /\.(png|jpe?g|svg)$/));
+        const keys = Object.keys(imgObject);
+        for(let i=0; i<product.length; i++){
+          product[i].imge=imgObject[keys[i]]
+        }
     }
     const handleSetMoeveX=(direction)=>{
             if(direction==="left"){

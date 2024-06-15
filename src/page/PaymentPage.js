@@ -146,11 +146,11 @@ const PaymentPage = () => {
                                 </tr>
                                 <tr>
                                     <td>상품가격</td>
-                                    <td>상품가격</td>
+                                    <td>{Detail[0].discounted_price}원</td>
                                 </tr>
                                 <tr >
                                     <td>배송비</td>
-                                    <td>배송비</td>
+                                    <td>3000원</td>
                                 </tr>
                                
                                 <tr>
@@ -189,9 +189,10 @@ const PaymentPage = () => {
                                             </div>
                                     </div>
                                 </div>
+                                
                             </div>
                             <div id="t3">
-                                <div id="t3Content">
+                            <div id="t3Content">
                                     <div >
                                         <input type="checkbox" id="mobile-payment" name="payment-method" value="mobile-payment"/>
                                         <label for="mobile-payment">구매조건 확인 및 결제진행에 동의</label>

@@ -52,16 +52,16 @@ const Header = () => {
             <ul id='navbar_menu2' className={menuOpen ? 'open' : ''}>
                 <li>  <Link to="#">{user.username}  님</Link></li>
                 <li><Link to="/store" onClick={Logoutclick}>로그아웃</Link></li>
-                <li><Link to="/#">마이페이지</Link></li>
+                <li><Link to="/mypage">마이페이지</Link></li>
                 <li><Link to="/">메인으로</Link></li>
             </ul>):
            (<ul id='navbar_menu2' className={menuOpen ? 'open' : ''}>
                 <li><Link to="/login">로그인</Link></li>
                 <li><Link to="/register">회원가입</Link></li>
-                <li><Link to="/#">마이페이지</Link></li>
+                <li><Link to="/mypage">마이페이지</Link></li>
                 <li><Link to="/">메인으로</Link></li>
             </ul>)}
-            <GiHamburgerMenu className='icon_hamburger' onClick={toggleMenu}/>
+            <GiHamburgerMenu id='icon_hamburger' onClick={toggleMenu}/>
     </nav>
     );
 };

@@ -1,0 +1,50 @@
+
+@import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff');
+.HomeBody{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #c8a755;
+}
+.HomeContent {
+    background: #353535;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* 예시: 검은색(0,0,0), 투명도 0.5 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .myProfile {
+    width: 80%;
+  }
+  
+.myProfile img{ 
+    width: 40%;
+    height:100%;
+    max-height:110%;
+}
+.HomeContent2{
+    background: #c8a755;  
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* 예시: 검은색(0,0,0), 투명도 0.5 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HomeContent3{
+    /* font-family: "Jaro", sans-serif; */
+    background-color: red;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 50vh;
+}
+.myintro{
+    font-size: 25px;
+    /* font-family: 'HSSaemaul-Regular'; */
+    color: #c8a755;
+}

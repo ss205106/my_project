@@ -40,3 +40,21 @@
     background-color: #ddd;
 
 }
+.WrteBtnDiv{
+    margin: 0 auto;
+    width: 600px;
+    text-align: end;
+}
+.WrteBtnDiv button{
+    padding: 5px 15px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: #000;
+    color: #f1f1f1;
+    transition: all 0.5s;
+}
+.WrteBtnDiv button:hover{
+    background-color: #f1f1f1;
+    color: #000;
+    cursor: pointer;
+}

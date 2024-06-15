@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from '../common/Header';
 import '../css/ItemPage.css'; // 별도의 CSS 파일을 사용합니다
 import PurchaseButtons from '../component/item/PurchaseButtons';
 import { useNavigate } from 'react-router-dom';
+import { Basket_item } from '../modules/sotreRedux';
 const ItemPage = () => {
     const { Detail } = useSelector(state => ({
         Detail: state.sotreRedux.Detail
@@ -13,7 +14,8 @@ const ItemPage = () => {
     const [totalPrice, setTotalPrice] = useState(Detail ? Detail[0].discounted_price : 0);
 
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
+    
     const handleQuantityChange=(e)=>{
         const selectedQuantity = parseInt(e.target.value);
         setQuantity(selectedQuantity);
@@ -25,7 +27,9 @@ const ItemPage = () => {
     }
     
     const handleAddToCart=()=>{
-        console.log("e")
+        dispatch(Basket_item())
+        alert("장바구니에 담겼습니다.")
+
     }
     return (
         <>

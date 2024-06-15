@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import { Detail_post } from '../modules/sotreRedux';
+import { Detail_post } from '../modules/post';
 import { useNavigate } from 'react-router-dom';
 const PostPage = () => {
-    const {DetailPost} = useSelector(state =>({
-        DetailPost:state.sotreRedux.DetailPost
+    const {DetailPost,postData} = useSelector(state =>({
+        DetailPost:state.PostRedux.DetailPost,
+        postData:state.PostRedux.postData
     }))
+
+    const [btnstyle,setBtnStyle] = useState(null)
     // console.log(DetailPost)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -24,6 +27,13 @@ const PostPage = () => {
     const Next = (id)=>{
         // console.log(id)
         const NextID = id +1
+        // if(NextID > postData.length){
+        //     setBtnStyle({
+        //         backgroundColor: 'red',
+        //         color: 'white',
+        //         // 추가적으로 필요한 스타일을 여기에 추가할 수 있습니다
+        //       })
+        // }
         dispatch(Detail_post(NextID))
     }
 
@@ -43,7 +53,7 @@ const PostPage = () => {
                         </div>
                         <div>
                             <button onClick={()=>Previous(DetailPost.id)}>이전글</button> 
-                            <button onClick={()=>Next(DetailPost.id)}>다음글</button>
+                            <button onClick={()=>Next(DetailPost.id)} style={btnstyle}>다음글</button>
                             <button onClick={()=>navigate("/Community")}>목록</button>
                         </div>
                     </div>: 
