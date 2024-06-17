@@ -12,6 +12,7 @@ import PostPage from './page/PostPage';
 import PaymentPage from './page/PaymentPage';
 import WritePage from './page/WritePage';
 import MyPage from './page/MyPage';
+import PurchaseReview from './page/PurchaseReview';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Payment' element={<PaymentPage/>}/>
           <Route path='/write' element={<WritePage/>}/>
           <Route path='/mypage' element={<MyPage/>}/>
+          <Route path='/Review' element={<PurchaseReview/>}/>
         </Routes>
       </div>
   );

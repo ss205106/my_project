@@ -44,8 +44,7 @@ const Header = () => {
             <ul id='navbar_menu' className={menuOpen ? 'open' : ''}>
                 <li><Link to="/store" >store</Link></li>
                 <li><Link to="/Community">커뮤니티</Link></li>
-               
-                <li><Link to="#">구매후기</Link></li>
+                <li><Link to="/Review">구매후기</Link></li>
             </ul>
             
             {user  ? (

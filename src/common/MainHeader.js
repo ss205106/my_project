@@ -54,19 +54,21 @@ const MainHeader = ({goodsTabs}) => {
                 <GiHamburgerMenu onClick={toggleMenu}/>
               </div>
             </div>
-            <ul  className={menuOpen ? 'menu2 open' : 'menu2'}>
-              {Object.keys(goodsTabs).map((key) => (
-                  <li>
-                      <Link to="#" 
-                      data-hover={goodsTabs[key].name}
-                      onClick={goodsTabs[key].onMoveToElement}>
-                      {goodsTabs[key].name}
-
-                      </Link>
-                  </li>
-              ))}
-              </ul>
         </div>
+        <div  className={menuOpen ? 'menu2 open' : 'menu2'}>
+              <ul >
+                {Object.keys(goodsTabs).map((key) => (
+                    <li>
+                        <Link to="#" 
+                        data-hover={goodsTabs[key].name}
+                        onClick={goodsTabs[key].onMoveToElement}>
+                        {goodsTabs[key].name}
+
+                        </Link>
+                    </li>
+                ))}
+                </ul>
+              </div>
       </div>
     );
 };

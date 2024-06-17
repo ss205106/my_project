@@ -2,10 +2,10 @@ import React, { useRef } from 'react';
 import TextAnimation from './TextAnimation';
 import styled from 'styled-components';
 import "../../css/Home.css"
-import { color } from 'framer-motion';
 import MainAnimation from '../../animation/MainAnimation';
 import MainAnimation2 from '../../animation/MainAnimation2';
-import { Link } from 'react-router-dom';
+import MainAnimation3 from '../../animation/MainAnimation3';
+
 const Spacer = styled.div`
   height: 2.7rem;
 `;
@@ -36,8 +36,9 @@ const Home = ({goodsTabs}) => {
       </div>
 
       <div ref={goodsTabs[2].element} className='HomeContent3'>
-        상품 문의
-        <Link to="/store">바로가기</Link>
+            <h2>PORTFOLIO</h2>
+            <MainAnimation3/>
+
       </div>
     </div>
   );

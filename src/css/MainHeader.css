@@ -162,6 +162,7 @@ a:hover, a:focus {
   display: none;
   width: 100%;
   transition: all 1s ease-in-out; 
+  background: white;
 }
 .menu2 li:hover{
   background-color: #c8a755;
@@ -170,35 +171,32 @@ a:hover, a:focus {
 .menu2 li:hover a {
   color: white;
 }
-.menu2 .open{
+ .open{
   display: block;
   width: 100%;
 }
 
 @media screen and (max-width: 768px) {
   #headerBox{
-    /* display: flex;
-    flex-direction: column; */
     width: 100%;
   }
   .header {
     height: 55px;
-    
   }
   .change_header{
     height: 55px;
   }
   .row{
     width: 95%;
-    margin: 10px;
+    
     display: flex;
     justify-content: space-between;
   }
   
   .change_header .row{
+    width: 95%;
     display: flex; 
     justify-content: space-between;
-    margin: 10px;
   }
   .change_header .menu{
     display: none;
@@ -213,10 +211,6 @@ a:hover, a:focus {
   .change_header .icon_hamburger{
     display: block;
     color: #353535;
-  }
-  .menu2 {
-    background: white;
-    width: 100%;
   }
   
 }
