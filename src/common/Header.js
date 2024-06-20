@@ -31,7 +31,7 @@ const Header = () => {
     
     const Logoutclick = useCallback(()=>{
         if(window.confirm("로그아웃하시겠씁니까?")){
-            dispatch(logout())
+            // dispatch(logout())
         }
     },[dispatch])
 
@@ -44,8 +44,7 @@ const Header = () => {
             <ul id='navbar_menu' className={menuOpen ? 'open' : ''}>
                 <li><Link to="/store" >store</Link></li>
                 <li><Link to="/Community">커뮤니티</Link></li>
-               
-                <li><Link to="#">구매후기</Link></li>
+                <li><Link to="/Review">구매후기</Link></li>
             </ul>
             
             {user  ? (
@@ -61,7 +60,7 @@ const Header = () => {
                 <li><Link to="/mypage">마이페이지</Link></li>
                 <li><Link to="/">메인으로</Link></li>
             </ul>)}
-            <GiHamburgerMenu className='icon_hamburger' onClick={toggleMenu}/>
+            <GiHamburgerMenu id='icon_hamburger' onClick={toggleMenu}/>
     </nav>
     );
 };

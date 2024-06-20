@@ -27,9 +27,7 @@ const MyPage = () => {
         }else if(img === "img4"){
             dispatch(Detail_item(id,"item4"))
         }
-        
         navigate("/Payment")
-
     }
     return (
         <div>

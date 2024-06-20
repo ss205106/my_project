@@ -1,20 +1,11 @@
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Playwrite+AU+SA:wght@100..400&display=swap');
 
-.text-animation {
-    width: 300px;
-    margin: 0 auto;
-}
+
   .text-animation span{
-    border-right: 2px solid white;
-
+    border-right: 4px solid  #c8a755;
   }
   .text-animation h2{
-    color: white;
-    font-style: Lato !important;
-
+    color:  #c8a755;
+    /* padding-bottom: 120px; */
   }
-  .text-animation p{
-    color: #c8a755;
-  } 
- 

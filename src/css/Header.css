@@ -30,7 +30,7 @@ li a {
 #navbar_menu li a:hover {
   border-bottom:1px solid #000;
 }
-.icon_hamburger{
+#icon_hamburger{
   position: absolute;
   display: none;
   right: 32px;
@@ -85,8 +85,9 @@ li a {
     justify-content: center;
     width: 100%;
   }
-  .icon_hamburger{
+  #icon_hamburger{
     display: block;
+    color: #000;
   }
   
 }

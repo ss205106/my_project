@@ -1,0 +1,21 @@
+#MPbody{
+    
+    background: #353535;
+}
+.MPContent{
+    background-color: white;
+    width: 40%;
+    margin: 0 auto;
+}
+.MPContent p {
+   font-size: 15px;
+}
+.MPimgBox{
+    display: flex;
+    flex-direction: column;
+}
+.MPimgBox img{
+    margin-bottom: 20px;
+    width: 100%;
+    height: 900px;
+}

@@ -18,13 +18,12 @@ function checkFailue (){
 }
 
 export const check =() => async dispath =>{
-
     try{
-        const response = await api.check() //api auth에있는거 참고
+        const response = await api.check()
         
         dispath({type:CHECK_SUCCSESS,payload:response.data})
     }catch(error){
-        dispath({type:CHECK_FALURE,payload:error}); //error는 의미를 잘모르겠고 하라는대로 하는거 쓰임없음
+        dispath({type:CHECK_FALURE,payload:error}); 
         checkFailue();
     }finally{
      

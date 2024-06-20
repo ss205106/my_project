@@ -3,8 +3,8 @@ import "../../css/TextAnimation.css"
 const TextAnimation = ({text}) => {
     const [blogTitle, setBlogTitle] = useState('');
     const [count, setCount] = useState(0);
-    const[ completionWord,setcompletionWord] =useState('송성민');
-
+    const[ completionWord,setcompletionWord] =useState(text);
+  
   useEffect(() => {
     const typingInterval = setInterval(() => {
       setBlogTitle((prevTitleValue) => {
@@ -14,10 +14,10 @@ const TextAnimation = ({text}) => {
         if (count >= completionWord.length) {
           setCount(0);
           setBlogTitle('');
-          if(completionWord === "송성민"){
-            setcompletionWord("Front-end developer")
+          if(blogTitle ===text){
+            setcompletionWord("front-end developer")
           }else{
-            setcompletionWord("송성민")
+            setcompletionWord(text)
           }
         }
 
@@ -31,7 +31,7 @@ const TextAnimation = ({text}) => {
   });
     return (
         <div className="text-animation">
-            <p>I am</p>
+
             <h2>{blogTitle}<span></span></h2>
         </div>
     );

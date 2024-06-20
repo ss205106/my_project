@@ -24,8 +24,6 @@ a:hover, a:focus {
   width: 100%;
   z-index: 1000; /* 적절한 값으로 조정 */
   transition: all 0.5s ease-in-out;
-}
-body * {
   font-family: Lato !important;
 }
 .row{
@@ -152,4 +150,67 @@ body * {
 
 .change_header .SMN_effect-6 a:hover:before, .SMN_effect-6 a:focus:before {
   max-width: 100%;
+}
+
+.icon_hamburger{
+  color: white;
+  margin: 10px;
+  display: none;
+}
+
+.menu2{
+  display: none;
+  width: 100%;
+  transition: all 1s ease-in-out; 
+  background: white;
+}
+.menu2 li:hover{
+  background-color: #c8a755;
+  
+}
+.menu2 li:hover a {
+  color: white;
+}
+ .open{
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #headerBox{
+    width: 100%;
+  }
+  .header {
+    height: 55px;
+  }
+  .change_header{
+    height: 55px;
+  }
+  .row{
+    width: 95%;
+    
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .change_header .row{
+    width: 95%;
+    display: flex; 
+    justify-content: space-between;
+  }
+  .change_header .menu{
+    display: none;
+  }
+   .menu{
+    display: none;
+  }
+  .icon_hamburger{
+    display: block;
+
+  }
+  .change_header .icon_hamburger{
+    display: block;
+    color: #353535;
+  }
+  
 }

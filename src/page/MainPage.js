@@ -17,13 +17,11 @@ const MainPage = () => {
     0: { ...useMoveScroll(), name: 'Home' },
     1: { ...useMoveScroll(), name: 'About' },
     2: { ...useMoveScroll(), name: 'Portfolio' },
-
   };
 
   return (
     <>
       <MainHeader goodsTabs={goodsTabs}/>
-    
       <Home goodsTabs={goodsTabs}/>
     </>
   );

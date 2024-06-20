@@ -9,21 +9,21 @@ import { thunk } from 'redux-thunk';
 import { legacy_createStore,applyMiddleware } from 'redux';
 import { rootReducer } from './modules';
 import logger from 'redux-logger';
-import { check,set_user } from './modules/user';
+// import { check,set_user } from './modules/user';
 const store = legacy_createStore(rootReducer,applyMiddleware(thunk,logger))
 
-function localUser(){
-  try{
-   const user = localStorage.getItem('user')
-   console.log(localStorage)
-   if(!user) return;
-   store.dispatch(set_user(JSON.parse(user)))
-   store.dispatch(check())
-   }catch(e){
-    console.log(e)
-   }
-}
-localUser()
+// function localUser(){
+//   try{
+//    const user = localStorage.getItem('user')
+//    console.log(localStorage)
+//    if(!user) return;
+//    store.dispatch(set_user(JSON.parse(user)))
+//    store.dispatch(check())
+//    }catch(e){
+//     console.log(e)
+//    }
+// }
+// localUser()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

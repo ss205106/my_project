@@ -12,6 +12,7 @@ export const register = (username,password,email) => {
     // console.log(response)
     return response
 }
+
 export const check = () => {
     const response = request.get('/api/auth/check')
     return response

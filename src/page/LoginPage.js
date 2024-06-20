@@ -4,11 +4,12 @@ import Form from '../component/auth/Form';
 import { change_mode } from '../modules/authRedux';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../common/Header';
-import { Login } from '../modules/authRedux';
+// import { Login } from '../modules/authRedux';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { check } from '../modules/user';
+
+import { check,set_user } from '../modules/user';
 const PageContainer = styled.div`
     width: 100%;
     height: 100vh;
@@ -35,9 +36,12 @@ const LoginPage = () => {
     
     const login_click = (e)=>{
         e.preventDefault()
-        const {username,password}=login;
-        dispatch(Login(username,password))
-        // navigate("/store")
+        //로그인 
+        dispatch(set_user(login))
+        // const {username,password}=login;
+        // dispatch(Login(username,password))
+        
+        navigate("/store")
     }
 
     useEffect(() => {
@@ -52,24 +56,25 @@ const LoginPage = () => {
         }
     }, [authError,setError,dispatch,auth]);
 
-    useEffect(()=>{
-        if(user){
-           try{
-            localStorage.setItem('user',JSON.stringify(user))
-           }catch(e){
-            console.log('localStorage is not working')
-           }
-            navigate(`/store`)
-        }
-    },[user,navigate])
-         
+    //배포를 위한 api 관련 코드 주석처리 
+    // useEffect(()=>{
+    //     if(user){
+    //        try{
+    //         localStorage.setItem('user',JSON.stringify(user))
+    //        }catch(e){
+    //         console.log('localStorage is not working')
+    //        }
+    //         navigate(`/store`)
+    //     }
+    // },[user,navigate])
+
 
     
     return (
         <PageContainer>
         <Header/>
-        <div >
-            <Template>
+        <div style={{height:"90vh"}}>
+            <Template style={{margin:"0 auto"}}>
                 <Form text="로그인" mode="login" onchange={onchange} onclick={login_click} error={error}/>
             </Template>
         </div>

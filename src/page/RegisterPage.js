@@ -9,9 +9,10 @@ import { useNavigate } from 'react-router-dom';
 const RegisterPage = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const {register} = useSelector(state=>({
-        register:state.authRedux.register
-    }))
+    // 
+    // const {register} = useSelector(state=>({
+    //     register:state.authRedux.register
+    // }))
     // console.log(register)
     const onchange=(e)=>{
         const { name, value } = e.target;
@@ -19,16 +20,15 @@ const RegisterPage = () => {
     }
     const Register_click = (e)=>{
         e.preventDefault()
-        const {username,password,email}=register;
-        dispatch(Register(username,password,email))
-    
+        // const {username,password,email}=register;
+        // dispatch(Register(username,password,email))
         navigate("/login")
 
     }
     return (
         <div>
         <Header/>
-        <div style={{height:"100%"}}>
+        <div style={{height:"80vh"}}>
             <Template>
                 <From  text="회원가입" mode="register" onchange={onchange} onclick={Register_click}/>
             </Template>
