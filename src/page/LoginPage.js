@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from '../common/Header';
 // import { Login } from '../modules/authRedux';
 import { set_user } from '../modules/user';
+import { Login } from '../modules/authRedux';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +14,8 @@ import { check } from '../modules/user';
 const PageContainer = styled.div`
     width: 100%;
     height: 100vh;
-    
+    display: flex;
+    flex-direction: column;
 `;
 const LoginPage = () => {
     
